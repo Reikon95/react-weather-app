@@ -27,7 +27,7 @@ class App extends React.Component {
   }
   render() { return (
     <div className="App">
-      Weather App
+      Weather Akpp
       <Weather city={this.state.city} country={this.state.country}/>
     </div>
   );
