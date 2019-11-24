@@ -5,7 +5,7 @@ const Weather = (props) => {
         <>
         <div className="container">
             <div className="place">
-                <h1>Welcome to {props.city}, {props.country}</h1>
+                <h1>Welcome to {props.city}!</h1>
                 {minMaxTemp(props.temp_min, props.temp_max)}
                 The temprature is currently {props.cel}C.
 
