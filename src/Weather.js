@@ -5,9 +5,12 @@ const Weather = (props) => {
         <>
         <div className="container">
             <div className="place">
-                <h1>{props.city}, {props.country}</h1>
-                {minMaxTemp('10', '20')}
-                Weather Description
+                <h1>Welcome to {props.city}, {props.country}</h1>
+                {minMaxTemp(props.temp_min, props.temp_max)}
+                The temprature is currently {props.cel}C.
+
+                The main weather pattern today will be {props.main}.
+                Have a great day!
             </div>
         </div>
         </>
