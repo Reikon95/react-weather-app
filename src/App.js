@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      city: 'London',
+      city: 'Dundee',
       country: undefined,
       icon: undefined,
       main: undefined,
