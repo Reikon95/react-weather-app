@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Weather from './Weather.js'
+import InputForm from './Form';
 
 const ApiKey = 'c3905f7a93aa6ca2b8cf8e68b9d6e718';
 // api.openweathermap.org/data/2.5/weather?q=London,uk
@@ -43,6 +44,7 @@ class App extends React.Component {
       Weather App
       <Weather city={this.state.city} country={this.state.country} cel={this.state.cel} main={this.state.main} temp_min={this.state.temp_min} 
       temp_max={this.state.temp_max}/>
+      <InputForm/>
     </div>
   );
   }
