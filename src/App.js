@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      city: undefined,
+      city: 'London',
       country: undefined,
       icon: undefined,
       main: undefined,
@@ -24,9 +24,9 @@ class App extends React.Component {
     };
     this.getWeather();
   }
-  getWeather = async () => {
-    // const apiCall = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${ApiKey}`)
-    const apiCall = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Santiago&appid=${ApiKey}`)
+  getWeather = async (e) => {
+    
+    const apiCall = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&appid=${ApiKey}`)
 
     const response = await apiCall.json(); //converts it to json data
     console.log(response);
