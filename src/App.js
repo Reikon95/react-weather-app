@@ -46,7 +46,11 @@ class App extends React.Component {
       }
     )
   }
-  render() { return (
+  render() { 
+    return this.state.city === undefined ?  
+      <h1>Hmm... appears that either you made a typo or we don't track your city yet. Try en  tering your nearest large city</h1>
+     :
+     (
     <div className="App">
       Weather App
       <Weather city={this.state.city} country={this.state.country} cel={this.state.cel} main={this.state.main} temp_min={this.state.temp_min} 
