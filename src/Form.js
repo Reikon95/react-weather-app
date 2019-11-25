@@ -1,8 +1,10 @@
 import React from 'react';
-function InputForm() {
+function InputForm(props) {
     return (
         <form>
-            <label>Enter your city here: </label><input type="text"/>
+            <label>Enter your city here: </label><input className="form-val" name="city" type="text" placeholder="City"/>
+            <button>Submit</button>
+
         </form>
     )
 }
