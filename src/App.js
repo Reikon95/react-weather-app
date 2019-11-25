@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      city: 'Dundee',
+      city: 'London',
       country: undefined,
       icon: undefined,
       main: undefined,
@@ -39,12 +39,20 @@ class App extends React.Component {
       temp_min: parseInt(response.main.temp_min - 273)
     })
   }
+  handleClick = (e) => {
+    this.setState(
+      {
+        city: e.target.value
+      }
+    )
+  }
   render() { return (
     <div className="App">
       Weather App
       <Weather city={this.state.city} country={this.state.country} cel={this.state.cel} main={this.state.main} temp_min={this.state.temp_min} 
       temp_max={this.state.temp_max}/>
       <InputForm/>
+      <button>Submit</button>
     </div>
   );
   }

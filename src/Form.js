@@ -2,7 +2,7 @@ import React from 'react';
 function InputForm() {
     return (
         <form>
-            <label>Enter your city here: </label><input type="text"/><button>Submit</button>
+            <label>Enter your city here: </label><input type="text"/>
         </form>
     )
 }
