@@ -22,7 +22,7 @@ class App extends React.Component {
     this.getWeather();
   }
   getWeather = async e => {
-    let city = 'London';
+    let city = this.state.city;
 
     const apiCall = await fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${city},uk&appid=${ApiKey}`
@@ -38,6 +38,14 @@ class App extends React.Component {
       temp_min: parseInt(response.main.temp_min - 273)
     })
   }
+  clickHandler = (e) => {
+    console.log('click')
+  }
+  submitFormHandler = e => {
+    e.preventDefault();
+    
+    console.log(this.ref.name.value); //will give us the name value
+  }
 
   render() { 
     return this.state.city === undefined ?  
@@ -49,6 +57,18 @@ class App extends React.Component {
       <InputForm/>
       <Weather city={this.state.city} country={this.state.country} cel={this.state.cel} main={this.state.main} temp_min={this.state.temp_min} 
       temp_max={this.state.temp_max}/>
+      {/* <form>
+            <label>Enter your city here: </label><input className="form-val" name="city" type="text" placeholder="City"/>
+            <button onClick={this.clickHandler}>Submit</button>
+
+        </form> */}
+      
+        <form onSubmit={this.submitFormHandler}>
+          <div>
+          <label>Enter your city here: </label><input type="text" name="name" ref="name" />
+          </div>
+        </form>
+
     </div>
   );
   }
