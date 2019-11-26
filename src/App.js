@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Weather from './Weather.js'
-
+//app now deployed on heroku - access here https://weather-checker-cjwb.herokuapp.com/
 const ApiKey = 'c3905f7a93aa6ca2b8cf8e68b9d6e718';
 class App extends React.Component {
   constructor() {
