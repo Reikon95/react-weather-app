@@ -21,7 +21,7 @@ class App extends React.Component {
   }
   getWeather = async (city) => {
     const apiCall = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`
     )
     const response = await apiCall.json();
     console.log(response);
