@@ -1,4 +1,4 @@
-React weather app. Not Deployed yet
+Access as deployed here - https://weather-checker-cjwb.herokuapp.com/
 
 CRA instructions below
 
