@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Weather from './Weather.js'
-import InputForm from './Form';
 
 const ApiKey = 'c3905f7a93aa6ca2b8cf8e68b9d6e718';
 class App extends React.Component {
@@ -30,7 +29,7 @@ class App extends React.Component {
       city: `${response.name}`,
       country: response.sys.country,
       cel: parseInt((response.main.temp - 273)),
-      main: response.weather[0].description,
+      main: response.weather[0].main,
       temp_max: parseInt(response.main.temp_max - 273),
       temp_min: parseInt(response.main.temp_min - 273)
     })
