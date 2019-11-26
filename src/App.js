@@ -18,18 +18,16 @@ class App extends React.Component {
       description: "",
       error: false
     };
-    this.getWeather();
+    this.getWeather(this.state.city);
   }
-  getWeather = async e => {
-    let city = this.state.city;
-
+  getWeather = async (city) => {
     const apiCall = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},uk&appid=${ApiKey}`
+        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`
     )
     const response = await apiCall.json();
     console.log(response);
     this.setState({
-      city: `${response.name}, ${response.sys.country}`,
+      city: `${response.name}`,
       country: response.sys.country,
       cel: parseInt((response.main.temp - 273)),
       main: response.weather[0].description,
@@ -39,7 +37,13 @@ class App extends React.Component {
   }
 
   submitFormHandler = e => {
-    this.getWeather(e)
+    e.preventDefault();
+    const cityInput = document.querySelector('.cityInput').value;
+    console.log('the input value is: ', cityInput);  
+    this.setState({
+      city: cityInput
+    }, () => this.getWeather(this.state.city) )
+    
   }
 
   render() { 
@@ -49,13 +53,12 @@ class App extends React.Component {
      (
     <div className="App">
       Weather App
-      {/* <InputForm/> */}
       <Weather city={this.state.city} country={this.state.country} cel={this.state.cel} main={this.state.main} temp_min={this.state.temp_min} 
       temp_max={this.state.temp_max}/>
       
-        <form onSubmit={this.submitFormHandler}>
+        <form onSubmit={(e) => this.submitFormHandler(e)}>
           <div>
-          <label>Enter your city here: </label><input type="text" name="name"/>
+          <label>Enter your city here: </label><input className="cityInput" type="text"/>
           </div>
         </form>
 
