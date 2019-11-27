@@ -60,6 +60,7 @@ class App extends React.Component {
           <label>Enter your city here: </label><input className="cityInput" type="text"/>
           </div>
         </form>
+        Advanced Weather Details
 
     </div>
   );
