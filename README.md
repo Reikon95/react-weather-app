@@ -1,4 +1,4 @@
-Access as deployed here - https://weather-checker-cjwb.herokuapp.com/
+Access as deployed here - https://weather-checker-cjwb.herokuapp.com/ <strong>Please allow up to 30 seconds for it to 'wake up' from heroku as it's on the free plan</strong>
 
 CRA instructions below
 
