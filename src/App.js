@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Weather from './Weather.js'
 import AdvancedDetails from './AdvancedDetails.js';
+
 //app now deployed on heroku - access here https://weather-checker-cjwb.herokuapp.com/
 const ApiKey = 'c3905f7a93aa6ca2b8cf8e68b9d6e718';
 class App extends React.Component {
@@ -50,12 +51,13 @@ class App extends React.Component {
   }
 
   render() { 
+    document.title="Cam Blackwood Weather App"
     return this.state.city === undefined ?  
       <h1>Hmm... appears that either you made a typo or we don't track your city yet. Try en  tering your nearest large city</h1>
      :
      (
     <div className="App">
-      Weather App
+      Cam Blackwood's Weather App
       <Weather city={this.state.city} country={this.state.country} cel={this.state.cel} main={this.state.main} temp_min={this.state.temp_min} 
       temp_max={this.state.temp_max}/>
       
@@ -65,7 +67,7 @@ class App extends React.Component {
           </div>
         </form>
         <AdvancedDetails windSpeed={this.state.windSpeed} humidity={this.state.humidity} pressure={this.state.pressure}/>
-
+        <button>Test</button>
     </div>
   );
   }
