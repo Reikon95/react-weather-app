@@ -7,7 +7,9 @@ export default function AdvancedDetails(props) {
         
         <button onClick={() => setDisplayed(!displayed)}>Display Advanced Weather Details</button>
         {displayed ? 
-        <p>Check back later - functionality not available yet</p>    
+        <ul>
+            <li>Wind Speed: {props.windSpeed}MPH</li>
+        </ul>  
         : <></>} 
         </>    
     )
