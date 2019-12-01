@@ -33,7 +33,9 @@ class App extends React.Component {
       main: response.weather[0].main,
       temp_max: parseInt(response.main.temp_max - 273),
       temp_min: parseInt(response.main.temp_min - 273),
-      windSpeed: parseInt(response.wind.speed)
+      windSpeed: parseInt(response.wind.speed),
+      humidity: parseInt(response.main.humidity),
+      pressure: parseInt(response.main.pressure)
     })
   }
 
@@ -62,7 +64,7 @@ class App extends React.Component {
           <label>Enter your city here: </label><input className="cityInput" type="text"/>
           </div>
         </form>
-        <AdvancedDetails windSpeed={this.state.windSpeed}/>
+        <AdvancedDetails windSpeed={this.state.windSpeed} humidity={this.state.humidity} pressure={this.state.pressure}/>
 
     </div>
   );

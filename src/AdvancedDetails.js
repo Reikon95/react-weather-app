@@ -9,6 +9,8 @@ export default function AdvancedDetails(props) {
         {displayed ? 
         <ul>
             <li>Wind Speed: {props.windSpeed}MPH</li>
+            <li>Humidity: {props.humidity}%</li>
+            <li>Pressure: {props.pressure}hPa</li>
         </ul>  
         : <></>} 
         </>    
