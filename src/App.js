@@ -67,7 +67,7 @@ class App extends React.Component {
           </div>
         </form>
         <AdvancedDetails windSpeed={this.state.windSpeed} humidity={this.state.humidity} pressure={this.state.pressure}/>
-        <button>Test</button>
+        
     </div>
   );
   }
