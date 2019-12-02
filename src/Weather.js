@@ -50,7 +50,13 @@ function getIcon(props) {
         <h1 className="py-2">
         <i className="wi wi-day-snow display-1 weather-icon"/>
         </h1>             
-    ) : <p>icon not available</p>
+    ) : props.main === "Haze" ? (
+        <h1 className="py-2">
+        <i className="wi wi-day-cloudy display-1 weather-icon"/>
+        </h1>             
+    ) : <h1 className="py-2">
+    <i className="wi wi-day-cloudy display-1 weather-icon"/>
+    </h1>
 }
 
 export default Weather
