@@ -9,9 +9,6 @@ const Weather = (props) => {
         <div className="container">
             <div className="place">
                 <h1>Welcome to {props.city}!</h1>
-                    {/* <h1 className="py-2">
-                    <i className="wi wi-day-cloudy display-1 weather-icon"/>
-                    </h1> */}
                     {getIcon(props)}
                 {props.main}
                 <h1>{props.cel}°C</h1>
