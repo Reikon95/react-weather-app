@@ -50,7 +50,7 @@ function getIcon(props) {
         <h1 className="py-2">
         <i className="wi wi-day-snow display-1 weather-icon"/>
         </h1>             
-    ) : props.main === "Haze" ? (
+    ) : props.main === "Haze" || props.main === "Hazy" || props.main === "Mist" ? (
         <h1 className="py-2">
         <i className="wi wi-day-cloudy display-1 weather-icon"/>
         </h1>             
