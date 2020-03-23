@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Weather from './Weather.js'
 import AdvancedDetails from './AdvancedDetails.js';
@@ -38,10 +38,14 @@ export default function App() {
         console.log('the input value is: ', cityInput);
         setForecast({
             city: cityInput
-        })
-        getWeather(forecast.city)
-        
+        })    
     }
+    useEffect(() => {
+        // Update the document title using the browser API
+        console.log(forecast)
+        getWeather(forecast.city)
+      });   
+      
     return (
         forecast.city === undefined ?
             <h1>Hmm... appears that either you made a typo or we don't track your city yet. Try en  tering your nearest large city</h1>
